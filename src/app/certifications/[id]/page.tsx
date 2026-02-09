@@ -1,10 +1,11 @@
+import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ArrowRight, Target, BookOpen, TrendingUp } from "lucide-react";
+import { ArrowRight, BookOpen, Target, TrendingUp, Users } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
-const certifications = [
-  {
+const certifications: any = {
+  edutech: {
     id: "edutech",
     step: "1️⃣ 기초",
     title: "에듀테크활용지도사",
@@ -47,7 +48,7 @@ const certifications = [
       "강사 역량 강화 교육",
     ],
   },
-  {
+  "digital-media": {
     id: "digital-media",
     step: "2️⃣ 비판",
     title: "디지털미디어교육",
@@ -115,7 +116,7 @@ const certifications = [
       "공공 캠페인·지역 기록",
     ],
   },
-  {
+  "metaverse-ethics": {
     id: "metaverse-ethics",
     step: "3️⃣ 체험",
     title: "메타버스·AI 윤리 체험지도사",
@@ -159,7 +160,7 @@ const certifications = [
       "AI·메타버스 체험 수업",
     ],
   },
-  {
+  "smart-device": {
     id: "smart-device",
     step: "4️⃣ 생활",
     title: "스마트디바이스활용지도사",
@@ -202,7 +203,7 @@ const certifications = [
       "디지털 돌봄·생활 교육",
     ],
   },
-  {
+  "ai-agent": {
     id: "ai-agent",
     step: "5️⃣ 설계",
     title: "AI 에이전트활용지도사",
@@ -258,190 +259,201 @@ const certifications = [
       "AI 리터러시·조직 컨설팅",
     ],
   },
-];
+};
 
-export default function CertificationsPage() {
+export async function generateStaticParams() {
+  return Object.keys(certifications).map((id) => ({
+    id: id,
+  }));
+}
+
+export default function CertificationDetailPage({ params }: { params: { id: string } }) {
+  const cert = certifications[params.id as keyof typeof certifications];
+
+  if (!cert) {
+    notFound();
+  }
+
   return (
     <div className="min-h-screen bg-white">
+      {/* Back Button */}
+      <div className="bg-gray-50 border-b">
+        <div className="max-w-4xl mx-auto px-4 py-3">
+          <Link
+            href="/certifications"
+            className="inline-flex items-center text-sm text-gray-600 hover:text-teal-600"
+          >
+            ← 자격증 과정 목록으로
+          </Link>
+        </div>
+      </div>
+
       {/* Hero */}
-      <section className="bg-gradient-to-br from-teal-600 to-teal-700 text-white py-20 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <span className="inline-block bg-white/20 px-4 py-2 rounded-full text-sm mb-4">
-            기초 → 비판 → 체험 → 생활 → 설계
+      <section className={`bg-gradient-to-r ${cert.color} text-white py-16 px-4`}>
+        <div className="max-w-4xl mx-auto">
+          <span className="inline-block bg-white/20 px-4 py-2 rounded-full text-sm mb-6">
+            {cert.step}
           </span>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            자격증 과정 5종
-          </h1>
-          <p className="text-xl text-teal-100">
-            사람을 중심에 둔 디지털 전환 교육 체계
+          <div className="flex items-center gap-4 mb-6">
+            <span className="text-6xl">{cert.icon}</span>
+            <div>
+              <h1 className="text-3xl md:text-5xl font-bold mb-2">{cert.title}</h1>
+              <p className="text-white/80 text-sm">{cert.subtitle}</p>
+            </div>
+          </div>
+          <p className="text-xl font-medium bg-white/10 rounded-xl p-4">
+            {cert.tagline}
           </p>
         </div>
       </section>
 
-      {/* Certifications List */}
+      {/* Main Content */}
       <section className="py-16 px-4">
-        <div className="max-w-6xl mx-auto space-y-16">
-          {certifications.map((cert) => (
-            <div key={cert.id} className="scroll-mt-20" id={cert.id}>
-              {/* Step Badge */}
-              <div className="flex justify-center mb-6">
-                <span className="bg-gray-900 text-white px-4 py-2 rounded-full text-sm font-medium">
-                  {cert.step}
-                </span>
+        <div className="max-w-4xl mx-auto space-y-12">
+          {/* Description */}
+          <p className="text-lg text-gray-700 leading-relaxed">{cert.description}</p>
+
+          {/* Social Necessity */}
+          <Card>
+            <CardContent className="p-8">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">사회적 필요성</h2>
+              <div className="bg-gray-50 rounded-xl p-6">
+                <ul className="space-y-3 mb-6">
+                  {cert.necessity.map((item: string, idx: number) => (
+                    <li key={idx} className="text-gray-700 flex items-start gap-3">
+                      <span className="text-teal-500 mt-1">•</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <p className="text-lg font-semibold text-gray-900">
+                  {cert.necessityTitle}
+                </p>
+                <p className="text-lg text-teal-700 font-medium">
+                  {cert.necessityConclusion}
+                </p>
               </div>
+            </CardContent>
+          </Card>
 
-              {/* Main Card */}
-              <Link href={`/certifications/${cert.id}`}>
-                <Card className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow cursor-pointer">
-                {/* Header */}
-                <div className={`bg-gradient-to-r ${cert.color} text-white p-8 md:p-10`}>
-                  <div className="flex flex-col md:flex-row md:items-center gap-6">
-                    <span className="text-6xl">{cert.icon}</span>
-                    <div className="flex-1">
-                      <h2 className="text-3xl md:text-4xl font-bold mb-2">{cert.title}</h2>
-                      <p className="text-white/80 text-sm mb-3">{cert.subtitle}</p>
-                      <p className="text-lg font-medium">{cert.tagline}</p>
+          {/* Perspectives or Roles */}
+          {cert.perspectives && (
+            <Card>
+              <CardContent className="p-8">
+                <h2 className="text-2xl font-bold text-gray-900 mb-6">핵심 교육 관점</h2>
+                <div className="grid md:grid-cols-3 gap-4">
+                  {cert.perspectives.map((perspective: string, idx: number) => (
+                    <div key={idx} className="bg-teal-50 rounded-lg p-4">
+                      <p className="text-gray-800 font-medium">{perspective}</p>
                     </div>
-                  </div>
+                  ))}
                 </div>
+              </CardContent>
+            </Card>
+          )}
 
-                {/* Content */}
-                <CardContent className="p-8 space-y-10">
-                  {/* Description */}
-                  <p className="text-gray-700 text-lg">{cert.description}</p>
-
-                  {/* Social Necessity */}
-                  <div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-4">사회적 필요성</h3>
-                    <div className="bg-gray-50 rounded-xl p-6">
-                      <ul className="space-y-2 mb-4">
-                        {cert.necessity.map((item, idx) => (
-                          <li key={idx} className="text-gray-700 flex items-start gap-2">
+          {cert.roles && (
+            <Card>
+              <CardContent className="p-8">
+                <h2 className="text-2xl font-bold text-gray-900 mb-6">핵심 역할</h2>
+                <div className="grid md:grid-cols-2 gap-6">
+                  {cert.roles.map((role: any, idx: number) => (
+                    <div key={idx} className="bg-gray-50 rounded-xl p-6">
+                      <h3 className="font-semibold text-gray-900 mb-3">{role.title}</h3>
+                      <ul className="space-y-2">
+                        {role.items.map((item: string, i: number) => (
+                          <li key={i} className="text-gray-700 text-sm flex items-start gap-2">
                             <span className="text-teal-500 mt-1">•</span>
                             <span>{item}</span>
                           </li>
                         ))}
                       </ul>
-                      <p className="text-lg font-semibold text-gray-900">
-                        {cert.necessityTitle}
-                      </p>
-                      <p className="text-lg text-teal-700 font-medium">
-                        {cert.necessityConclusion}
-                      </p>
                     </div>
-                  </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          )}
 
-                  {/* Perspectives or Roles */}
-                  {cert.perspectives && (
-                    <div>
-                      <h3 className="text-xl font-semibold text-gray-900 mb-4">핵심 교육 관점</h3>
-                      <div className="grid md:grid-cols-3 gap-4">
-                        {cert.perspectives.map((perspective, idx) => (
-                          <div key={idx} className="bg-teal-50 rounded-lg p-4">
-                            <p className="text-gray-800 font-medium">{perspective}</p>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-
-                  {cert.roles && (
-                    <div>
-                      <h3 className="text-xl font-semibold text-gray-900 mb-4">핵심 역할</h3>
-                      <div className="grid md:grid-cols-2 gap-6">
-                        {cert.roles.map((role, idx) => (
-                          <div key={idx} className="bg-gray-50 rounded-xl p-6">
-                            <h4 className="font-semibold text-gray-900 mb-3">{role.title}</h4>
-                            <ul className="space-y-2">
-                              {role.items.map((item, i) => (
-                                <li key={i} className="text-gray-700 text-sm flex items-start gap-2">
-                                  <span className="text-teal-500 mt-1">•</span>
-                                  <span>{item}</span>
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-
-                  {cert.competencies && (
-                    <div>
-                      <h3 className="text-xl font-semibold text-gray-900 mb-4">핵심 역량 구성</h3>
-                      <div className="grid md:grid-cols-3 gap-6">
-                        {cert.competencies.map((competency, idx) => (
-                          <div key={idx} className="bg-gray-50 rounded-xl p-6">
-                            <h4 className="font-semibold text-gray-900 mb-3">{competency.title}</h4>
-                            <ul className="space-y-2">
-                              {competency.items.map((item, i) => (
-                                <li key={i} className="text-gray-700 text-sm flex items-start gap-2">
-                                  <span className="text-teal-500 mt-1">•</span>
-                                  <span>{item}</span>
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Contents */}
-                  <div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                      <BookOpen className="w-5 h-5 text-teal-600" />
-                      주요 학습 내용
-                    </h3>
-                    <div className="grid md:grid-cols-2 gap-3">
-                      {cert.contents.map((content, idx) => (
-                        <div key={idx} className="flex items-start gap-3 p-3 bg-white border border-gray-200 rounded-lg">
-                          <span className="w-6 h-6 bg-teal-600 text-white rounded-full flex items-center justify-center text-xs flex-shrink-0">
-                            {idx + 1}
-                          </span>
-                          <span className="text-gray-700">{content}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Growth */}
-                  <div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                      <TrendingUp className="w-5 h-5 text-teal-600" />
-                      수료 후 성장 모습
-                    </h3>
-                    <div className="bg-gradient-to-r from-teal-50 to-blue-50 rounded-xl p-6">
-                      <ul className="space-y-3">
-                        {cert.growth.map((item, idx) => (
-                          <li key={idx} className="text-gray-700 flex items-start gap-3">
-                            <span className="text-teal-600 text-xl">✓</span>
+          {cert.competencies && (
+            <Card>
+              <CardContent className="p-8">
+                <h2 className="text-2xl font-bold text-gray-900 mb-6">핵심 역량 구성</h2>
+                <div className="grid md:grid-cols-3 gap-6">
+                  {cert.competencies.map((competency: any, idx: number) => (
+                    <div key={idx} className="bg-gray-50 rounded-xl p-6">
+                      <h3 className="font-semibold text-gray-900 mb-3">{competency.title}</h3>
+                      <ul className="space-y-2">
+                        {competency.items.map((item: string, i: number) => (
+                          <li key={i} className="text-gray-700 text-sm flex items-start gap-2">
+                            <span className="text-teal-500 mt-1">•</span>
                             <span>{item}</span>
                           </li>
                         ))}
                       </ul>
                     </div>
-                  </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          )}
 
-                  {/* Fields */}
-                  <div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                      <Target className="w-5 h-5 text-teal-600" />
-                      활용 분야
-                    </h3>
-                    <div className="flex flex-wrap gap-2">
-                      {cert.fields.map((field, idx) => (
-                        <span key={idx} className="bg-gray-100 text-gray-800 px-4 py-2 rounded-full text-sm">
-                          {field}
-                        </span>
-                      ))}
-                    </div>
+          {/* Contents */}
+          <Card>
+            <CardContent className="p-8">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
+                <BookOpen className="w-6 h-6 text-teal-600" />
+                주요 학습 내용
+              </h2>
+              <div className="grid md:grid-cols-2 gap-4">
+                {cert.contents.map((content: string, idx: number) => (
+                  <div key={idx} className="flex items-start gap-4 p-4 bg-white border border-gray-200 rounded-lg">
+                    <span className="w-8 h-8 bg-teal-600 text-white rounded-full flex items-center justify-center text-sm flex-shrink-0">
+                      {idx + 1}
+                    </span>
+                    <span className="text-gray-700">{content}</span>
                   </div>
-                </CardContent>
-              </Card>
-              </Link>
-            </div>
-          ))}
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Growth */}
+          <Card>
+            <CardContent className="p-8">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
+                <TrendingUp className="w-6 h-6 text-teal-600" />
+                수료 후 성장 모습
+              </h2>
+              <div className="bg-gradient-to-r from-teal-50 to-blue-50 rounded-xl p-6">
+                <ul className="space-y-4">
+                  {cert.growth.map((item: string, idx: number) => (
+                    <li key={idx} className="text-gray-700 flex items-start gap-3">
+                      <span className="text-teal-600 text-xl">✓</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Fields */}
+          <Card>
+            <CardContent className="p-8">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
+                <Target className="w-6 h-6 text-teal-600" />
+                활용 분야
+              </h2>
+              <div className="flex flex-wrap gap-3">
+                {cert.fields.map((field: string, idx: number) => (
+                  <span key={idx} className="bg-gray-100 text-gray-800 px-5 py-3 rounded-full text-base">
+                    {field}
+                  </span>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </section>
 
@@ -449,14 +461,24 @@ export default function CertificationsPage() {
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
-            어떤 과정부터 시작하시겠습니까?
+            {cert.title} 과정에 참여해보세요
           </h2>
-          <Button asChild size="lg" className="bg-teal-600 hover:bg-teal-700">
-            <Link href="/contact">
-              수강 문의하기
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
-          </Button>
+          <p className="text-lg text-gray-600 mb-8">
+            사람 중심의 디지털 교육자로 성장할 수 있습니다.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button asChild size="lg" className="bg-teal-600 hover:bg-teal-700">
+              <Link href="/contact">
+                수강 문의하기
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </Button>
+            <Button asChild size="lg" variant="outline">
+              <Link href="/certifications">
+                다른 과정 보기
+              </Link>
+            </Button>
+          </div>
         </div>
       </section>
     </div>
