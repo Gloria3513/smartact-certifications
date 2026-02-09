@@ -17,7 +17,7 @@ const certifications = [
     necessity: [
       "에듀테크 도구는 넘쳐나지만, 무엇을 써야 할지 모르는 현장",
       "기술이 수업을 방해하는 역설",
-      ""AI는 좋은데, 수업엔 어떻게 쓰지?"라는 혼란",
+      "'AI는 좋은데, 수업엔 어떻게 쓰지?'라는 혼란",
     ],
     necessityTitle: "에듀테크활용지도사는",
     necessityConclusion: "기술 과잉의 시대에서 '선별과 판단'을 담당하는 교육자입니다.",
@@ -37,7 +37,7 @@ const certifications = [
 
     growth: [
       "새로운 도구 앞에서 흔들리지 않는 교육자",
-      ""이건 우리 수업에 안 맞아요"라고 말할 수 있는 판단력",
+      "'이건 우리 수업에 안 맞아요'라고 말할 수 있는 판단력",
       "에듀테크를 교육의 보조자로 활용하는 설계자",
     ],
 
@@ -131,7 +131,7 @@ const certifications = [
       "AI 저작권 문제",
       "메타버스 속 책임 없는 행동",
     ],
-    necessityTitle: "문제는 "몰라서"가 아니라",
+    necessityTitle: "문제는 '몰라서'가 아니라",
     necessityConclusion: "체감하지 못해서 발생합니다.",
 
     perspectives: [
@@ -191,7 +191,7 @@ const certifications = [
     ],
 
     growth: [
-      ""괜찮아요"라고 말해줄 수 있는 교육자",
+      "'괜찮아요'라고 말해줄 수 있는 교육자",
       "디지털을 삶의 도구로 연결하는 사람",
       "지역사회 디지털 격차 완충자",
     ],
@@ -215,7 +215,7 @@ const certifications = [
     necessity: [
       "AI 격차는 기술의 문제가 아니라",
       "일의 구조를 모르는 격차",
-      ""나는 못 해"라는 인식의 격차",
+      "'나는 못 해'라는 인식의 격차",
     ],
     necessityTitle: "이 과정은",
     necessityConclusion: "사람을 한 단계 끌어올리는 AI 중재자를 양성합니다.",
