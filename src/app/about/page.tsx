@@ -1,35 +1,34 @@
 import { Card, CardContent } from "@/components/ui/card";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 const features = [
   {
-    number: "①",
-    title: "현장 중심 설계",
-    description: "강의실이 아닌 복지관·학교·마을·기관 기준",
-    details: "실제 수업·프로그램에 바로 적용 가능",
+    title: "기술을 따라잡는 교육이 아니라",
+    description: "사람이 기술 속에서 길을 잃지 않도록 돕는 교육입니다.",
   },
   {
-    number: "②",
-    title: "사람 중심 디지털",
-    description: "기술 설명 ❌",
-    details: "정서·관계·자존감·참여를 고려한 교육 설계",
+    title: "이해·비판·설계·중재",
+    description: "더 많은 기술보다 이해·비판·설계·중재할 수 있는 교육자가 필요합니다.",
   },
   {
-    number: "③",
-    title: "결과물이 남는 교육",
-    description: "수업안, 콘텐츠, 영상, 자동화 시스템 등",
-    details: "'이력으로 남는 결과물' 제작",
+    title: "단계적 구조",
+    description: "기초 → 비판 → 체험 → 생활 → 설계로 이어지는 사람 중심 디지털 교육의 구조입니다.",
   },
 ];
 
-const questions = [
+const principles = [
   {
-    q: "이 기술은 누구의 삶에 도움이 되는가?",
+    title: "사람 중심",
+    content: "기술이 사람을 위해 존재함을 잊지 않습니다.",
   },
   {
-    q: "교육 현장에서 어떻게 쓰일 수 있는가?",
+    title: "현장 중심",
+    content: "강의실이 아닌 복지관·학교·마을·기관 기준으로 설계합니다.",
   },
   {
-    q: "취약계층·지역사회·교육 현장과 연결되는가?",
+    title: "실전 중심",
+    content: "수업안, 콘텐츠, 영상, 자동화 시스템 등 결과물이 남는 교육입니다.",
   },
 ];
 
@@ -40,60 +39,79 @@ export default function AboutPage() {
       <section className="bg-gradient-to-br from-teal-600 to-teal-700 text-white py-20 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            스마택트 자격증은<br />왜 다를까요?
+            스마택트 교육 체계
           </h1>
+          <p className="text-xl text-teal-100">
+            사람을 중심에 둔 디지털 전환 교육
+          </p>
         </div>
       </section>
 
-      {/* Introduction */}
+      {/* Declaration */}
       <section className="py-16 px-4">
         <div className="max-w-3xl mx-auto">
-          <p className="text-lg text-gray-700 leading-relaxed mb-8">
-            스마택트의 자격증은
-            <br />
-            단순한 기술 습득이나 시험 통과를 목표로 하지 않습니다.
-          </p>
-
           <div className="bg-gray-50 rounded-2xl p-8 mb-12">
-            <p className="text-xl text-gray-900 font-medium mb-6">우리는 묻습니다.</p>
-            <ul className="space-y-4">
-              {questions.map((item, idx) => (
-                <li key={idx} className="flex items-start gap-3">
-                  <span className="w-8 h-8 bg-teal-600 text-white rounded-full flex items-center justify-center flex-shrink-0 text-sm font-bold">
-                    {idx + 1}
-                  </span>
-                  <span className="text-lg text-gray-700 pt-1">{item.q}</span>
-                </li>
-              ))}
-            </ul>
+            <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+              스마택트 교육 체계 선언문
+            </h2>
+            <p className="text-lg text-gray-700 leading-relaxed mb-6">
+              스마택트의 교육 과정은
+              <br />
+              기술을 따라잡는 교육이 아니라,
+              <br />
+              <strong className="text-teal-700">사람이 기술 속에서 길을 잃지 않도록 돕는 교육</strong>입니다.
+            </p>
+            <p className="text-lg text-gray-700 leading-relaxed mb-6">
+              디지털 전환, AI 확산, 미디어 환경 변화 속에서
+              <br />
+              우리는 더 많은 기술보다
+              <br />
+              <strong className="text-teal-700">이해·비판·설계·중재할 수 있는 교육자</strong>가 필요하다고 믿습니다.
+            </p>
+            <p className="text-lg text-gray-700 leading-relaxed">
+              스마택트의 5가지 과정은
+              <br />
+              <strong className="text-teal-700">기초 → 비판 → 체험 → 생활 → 설계</strong>로 이어지는
+              <br />
+              사람 중심 디지털 교육의 단계적 구조입니다.
+            </p>
           </div>
-
-          <p className="text-lg text-gray-700 leading-relaxed">
-            그래서 스마택트 자격증은
-            <br />
-            <strong className="text-teal-700">모두 '현장 문제 해결'을 중심으로 설계</strong>되었습니다.
-          </p>
         </div>
       </section>
 
       {/* Features */}
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
-            스마택트 자격증 공통 특징
+          <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-900 mb-12">
+            스마택트 교육의 특징
           </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {features.map((feature) => (
-              <Card key={feature.title} className="text-center">
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
+            {features.map((feature, idx) => (
+              <Card key={idx} className="text-center">
                 <CardContent className="pt-8">
-                  <span className="text-4xl font-bold text-teal-600 mb-4 block">
-                    {feature.number}
-                  </span>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                  <div className="w-16 h-16 bg-teal-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span className="text-2xl font-bold text-white">{idx + 1}</span>
+                  </div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">
                     {feature.title}
                   </h3>
-                  <p className="text-gray-600 mb-2">{feature.description}</p>
-                  <p className="text-sm text-gray-500">{feature.details}</p>
+                  <p className="text-gray-600 text-sm">{feature.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-900 mb-12">
+            교육 원칙
+          </h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            {principles.map((principle, idx) => (
+              <Card key={idx}>
+                <CardContent className="pt-6 text-center">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                    {principle.title}
+                  </h3>
+                  <p className="text-gray-600">{principle.content}</p>
                 </CardContent>
               </Card>
             ))}
@@ -101,19 +119,20 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Closing */}
-      <section className="py-20 px-4 bg-white">
+      {/* CTA */}
+      <section className="py-20 px-4">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
-            기술을 가르치지 않습니다.
-            <br />
-            사람이 기술을 통해 살아갈 수 있게 돕습니다.
+            함께 성장할 준비가 되셨나요?
           </h2>
-          <p className="text-lg text-gray-600">
-            스마택트 자격증과 함께
-            <br />
-            사람 중심의 디지털 교육을 시작해보세요.
+          <p className="text-lg text-gray-600 mb-8">
+            스마택트 교육과 함께 사람 중심의 디지털 교육자가 되어보세요.
           </p>
+          <Button asChild size="lg" className="bg-teal-600 hover:bg-teal-700">
+            <Link href="/certifications">
+              자격증 과정 보기
+            </Link>
+          </Button>
         </div>
       </section>
     </div>
