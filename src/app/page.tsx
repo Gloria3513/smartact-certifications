@@ -6,8 +6,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 const certifications = [
   {
     id: "edutech",
-    title: "에듀테크활용지도사",
-    description: "기술 과잉의 시대에서 '선별과 판단'을 담당하는 교육자",
+    title: "에듀테크활용지도전문가",
+    description: "기술 과잉의 시대에서 '선별과 판단'을 담당하는 교육전문가",
     subtitle: "도구를 아는 사람이 아니라 교육 목적에 맞게 기술을 선택할 수 있는 사람",
     icon: "🎯",
   },
@@ -20,22 +20,22 @@ const certifications = [
   },
   {
     id: "metaverse-ethics",
-    title: "메타버스·AI 윤리 체험지도사",
-    description: "윤리를 '지식'이 아니라 체험과 선택의 문제로 다루는 교육자",
+    title: "메타버스·AI 윤리 체험지도전문가",
+    description: "윤리를 '지식'이 아니라 체험과 선택의 문제로 다루는 교육전문가",
     subtitle: "훈계형 윤리 교육이 아닌 체험 → 선택 → 성찰의 구조",
     icon: "🌐",
   },
   {
     id: "smart-device",
-    title: "스마트디바이스활용지도사",
+    title: "스마트디바이스활용지도전문가",
     description: "기술을 가르치는 사람이 아니라 '곁에서 함께 해주는 사람'",
-    subtitle: "디지털 공포를 낮추고, 삶과 연결하는 교육자",
+    subtitle: "디지털 공포를 낮추고, 삶과 연결하는 교육전문가",
     icon: "📱",
   },
   {
     id: "ai-agent",
-    title: "AI 에이전트활용지도사",
-    description: "AI를 잘 쓰는 사람이 아니라 AI와 사람 사이를 연결하는 시스템 설계자",
+    title: "AI 에이전트활용지도전문가",
+    description: "AI를 잘 쓰는 사람이 아니라 AI와 사람 사이를 연결하는 시스템 설계전문가",
     subtitle: "사람을 한 단계 끌어올리는 AI 중재자",
     icon: "🤖",
   },
@@ -48,7 +48,7 @@ const coreMessages = [
   },
   {
     title: "더 많은 기술보다",
-    description: "이해·비판·설계·중재할 수 있는 교육자가 필요합니다.",
+    description: "이해·비판·설계·중재할 수 있는 교육전문가가 필요합니다.",
   },
   {
     title: "단계적 구조로 이어지는 교육 체계",
@@ -95,7 +95,7 @@ export default function Home() {
             <br />
             우리는 더 많은 기술보다
             <br />
-            <strong className="text-teal-700 text-xl">이해·비판·설계·중재할 수 있는 교육자</strong>가 필요하다고 믿습니다.
+            <strong className="text-teal-700 text-xl">이해·비판·설계·중재할 수 있는 교육전문가</strong>가 필요하다고 믿습니다.
           </p>
           <div className="bg-teal-50 rounded-2xl p-8">
             <p className="text-gray-700 leading-relaxed">
@@ -168,7 +168,7 @@ export default function Home() {
       <section className="py-20 px-4 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            사람 중심의 디지털 교육자가 되어보세요
+            사람 중심의 디지털 교육전문가가 되어보세요
           </h2>
           <Button asChild size="lg" className="mt-8 bg-yellow-400 text-gray-900 hover:bg-yellow-300">
             <Link href="/contact">

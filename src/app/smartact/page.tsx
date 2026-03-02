@@ -19,7 +19,7 @@ const values = [
 const system = [
   {
     step: "기초",
-    title: "에듀테크활용지도사",
+    title: "에듀테크활용지도전문가",
     description: "교육 목적에 맞게 기술을 선택할 수 있는 사람",
   },
   {
@@ -29,18 +29,18 @@ const system = [
   },
   {
     step: "체험",
-    title: "메타버스·AI 윤리 체험지도사",
-    description: "윤리를 체험과 선택의 문제로 다루는 교육자",
+    title: "메타버스·AI 윤리 체험지도전문가",
+    description: "윤리를 체험과 선택의 문제로 다루는 교육전문가",
   },
   {
     step: "생활",
-    title: "스마트디바이스활용지도사",
-    description: "디지털 공포를 낮추고 삶과 연결하는 교육자",
+    title: "스마트디바이스활용지도전문가",
+    description: "디지털 공포를 낮추고 삶과 연결하는 교육전문가",
   },
   {
     step: "설계",
-    title: "AI 에이전트활용지도사",
-    description: "AI와 사람 사이를 연결하는 시스템 설계자",
+    title: "AI 에이전트활용지도전문가",
+    description: "AI와 사람 사이를 연결하는 시스템 설계전문가",
   },
 ];
 
@@ -70,7 +70,7 @@ export default function SmartactPage() {
               <br />
               우리는 더 많은 기술보다
               <br />
-              <strong className="text-teal-700">이해·비판·설계·중재할 수 있는 교육자</strong>가 필요합니다.
+              <strong className="text-teal-700">이해·비판·설계·중재할 수 있는 교육전문가</strong>가 필요합니다.
             </p>
           </div>
         </div>

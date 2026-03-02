@@ -9,7 +9,7 @@ const features = [
   },
   {
     title: "이해·비판·설계·중재",
-    description: "더 많은 기술보다 이해·비판·설계·중재할 수 있는 교육자가 필요합니다.",
+    description: "더 많은 기술보다 이해·비판·설계·중재할 수 있는 교육전문가가 필요합니다.",
   },
   {
     title: "단계적 구조",
@@ -66,7 +66,7 @@ export default function AboutPage() {
               <br />
               우리는 더 많은 기술보다
               <br />
-              <strong className="text-teal-700">이해·비판·설계·중재할 수 있는 교육자</strong>가 필요하다고 믿습니다.
+              <strong className="text-teal-700">이해·비판·설계·중재할 수 있는 교육전문가</strong>가 필요하다고 믿습니다.
             </p>
             <p className="text-lg text-gray-700 leading-relaxed">
               스마택트의 5가지 과정은
@@ -126,7 +126,7 @@ export default function AboutPage() {
             함께 성장할 준비가 되셨나요?
           </h2>
           <p className="text-lg text-gray-600 mb-8">
-            스마택트 교육과 함께 사람 중심의 디지털 교육자가 되어보세요.
+            스마택트 교육과 함께 사람 중심의 디지털 교육전문가가 되어보세요.
           </p>
           <Button asChild size="lg" className="bg-teal-600 hover:bg-teal-700">
             <Link href="/certifications">

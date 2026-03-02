@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "스마택트 자격증 | 디지털을 가르치는 것이 아니라 사람을 살리는 교육자를",
-  description: "스마택트 민간자격증은 AI·디지털 기술을 '잘 쓰는 사람'이 아니라 현장에서 사람을 돕는 교육자·활동가를 양성합니다.",
+  title: "스마택트 자격증 | 디지털을 가르치는 것이 아니라 사람을 살리는 교육전문가를",
+  description: "스마택트 민간자격증은 AI·디지털 기술을 '잘 쓰는 사람'이 아니라 현장에서 사람을 돕는 교육전문가·활동가를 양성합니다.",
 };
 
 export default function RootLayout({

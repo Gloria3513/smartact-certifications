@@ -7,7 +7,7 @@ const certifications = [
   {
     id: "edutech",
     step: "1️⃣ 기초",
-    title: "에듀테크활용지도사",
+    title: "에듀테크활용지도전문가",
     subtitle: "(EdTech Utilization Instructor)",
     tagline: "'도구를 아는 사람'이 아니라 '교육 목적에 맞게 기술을 선택할 수 있는 사람'",
     description: "이 과정은 모든 스마택트 교육의 기초이자 출발점입니다.",
@@ -19,8 +19,8 @@ const certifications = [
       "기술이 수업을 방해하는 역설",
       "'AI는 좋은데, 수업엔 어떻게 쓰지?'라는 혼란",
     ],
-    necessityTitle: "에듀테크활용지도사는",
-    necessityConclusion: "기술 과잉의 시대에서 '선별과 판단'을 담당하는 교육자입니다.",
+    necessityTitle: "에듀테크활용지도전문가는",
+    necessityConclusion: "기술 과잉의 시대에서 '선별과 판단'을 담당하는 교육전문가입니다.",
 
     perspectives: [
       "기술보다 교육 목적이 먼저",
@@ -36,9 +36,9 @@ const certifications = [
     ],
 
     growth: [
-      "새로운 도구 앞에서 흔들리지 않는 교육자",
+      "새로운 도구 앞에서 흔들리지 않는 교육전문가",
       "'이건 우리 수업에 안 맞아요'라고 말할 수 있는 판단력",
-      "에듀테크를 교육의 보조자로 활용하는 설계자",
+      "에듀테크를 교육의 보조자로 활용하는 설계전문가",
     ],
 
     fields: [
@@ -104,7 +104,7 @@ const certifications = [
     ],
 
     growth: [
-      "미디어를 무비판적으로 소비하지 않는 교육자",
+      "미디어를 무비판적으로 소비하지 않는 교육전문가",
       "윤리를 훈계하지 않고 질문으로 이끄는 지도자",
       "생각하고 표현하는 시민을 길러내는 사람",
     ],
@@ -118,9 +118,9 @@ const certifications = [
   {
     id: "metaverse-ethics",
     step: "3️⃣ 체험",
-    title: "메타버스·AI 윤리 체험지도사",
+    title: "메타버스·AI 윤리 체험지도전문가",
     subtitle: "(Metaverse & AI Ethics Experience Instructor)",
-    tagline: "윤리를 '지식'이 아니라 체험과 선택의 문제로 다루는 교육자",
+    tagline: "윤리를 '지식'이 아니라 체험과 선택의 문제로 다루는 교육전문가",
     description: "이 과정은 윤리를 '지식'이 아니라 체험과 선택의 문제로 다룹니다.",
     icon: "🌐",
     color: "from-indigo-500 to-indigo-600",
@@ -148,9 +148,9 @@ const certifications = [
     ],
 
     growth: [
-      "윤리를 재미있게 가르칠 수 있는 교육자",
+      "윤리를 재미있게 가르칠 수 있는 교육전문가",
       "기술을 통제의 문제가 아닌 책임의 문제로 다루는 사람",
-      "아동·청소년 눈높이에 맞춘 윤리 설계자",
+      "아동·청소년 눈높이에 맞춘 윤리 설계전문가",
     ],
 
     fields: [
@@ -162,10 +162,10 @@ const certifications = [
   {
     id: "smart-device",
     step: "4️⃣ 생활",
-    title: "스마트디바이스활용지도사",
+    title: "스마트디바이스활용지도전문가",
     subtitle: "(Smart Device Utilization Instructor)",
     tagline: "기술을 가르치는 사람이 아니라 '곁에서 함께 해주는 사람'",
-    description: "디지털 공포를 낮추고, 삶과 연결하는 교육자를 양성합니다.",
+    description: "디지털 공포를 낮추고, 삶과 연결하는 교육전문가를 양성합니다.",
     icon: "📱",
     color: "from-green-500 to-green-600",
 
@@ -175,7 +175,7 @@ const certifications = [
       "실패 경험과 두려움 때문에 생깁니다",
     ],
     necessityTitle: "이 과정은",
-    necessityConclusion: "디지털 공포를 낮추고, 삶과 연결하는 교육자를 양성합니다.",
+    necessityConclusion: "디지털 공포를 낮추고, 삶과 연결하는 교육전문가를 양성합니다.",
 
     perspectives: [
       "속도보다 안심",
@@ -191,7 +191,7 @@ const certifications = [
     ],
 
     growth: [
-      "'괜찮아요'라고 말해줄 수 있는 교육자",
+      "'괜찮아요'라고 말해줄 수 있는 교육전문가",
       "디지털을 삶의 도구로 연결하는 사람",
       "지역사회 디지털 격차 완충자",
     ],
@@ -205,9 +205,9 @@ const certifications = [
   {
     id: "ai-agent",
     step: "5️⃣ 설계",
-    title: "AI 에이전트활용지도사",
+    title: "AI 에이전트활용지도전문가",
     subtitle: "(AI Agent Utilization & System Design Instructor)",
-    tagline: "AI를 잘 쓰는 사람이 아니라 AI와 사람 사이를 연결하는 '시스템 설계자'",
+    tagline: "AI를 잘 쓰는 사람이 아니라 AI와 사람 사이를 연결하는 '시스템 설계전문가'",
     description: "사람을 한 단계 끌어올리는 AI 중재자를 양성합니다.",
     icon: "🤖",
     color: "from-orange-500 to-orange-600",
@@ -222,7 +222,7 @@ const certifications = [
 
     roles: [
       {
-        title: "핵심 역할 ① 시스템 설계자",
+        title: "핵심 역할 ① 시스템 설계전문가",
         items: [
           "업무 흐름 분석",
           "반복·비효율 지점 발견",
@@ -248,7 +248,7 @@ const certifications = [
 
     growth: [
       "AI를 설명하는 사람이 아니라 연결하는 사람",
-      "조직과 개인의 일하는 방식을 바꾸는 설계자",
+      "조직과 개인의 일하는 방식을 바꾸는 설계전문가",
       "디지털 전환 현장의 조력자",
     ],
 
