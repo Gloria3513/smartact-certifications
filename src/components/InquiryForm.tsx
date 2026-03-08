@@ -48,25 +48,14 @@ export default function InquiryForm() {
     setIsSubmitting(true);
 
     try {
-      if (!supabase) {
-        setError("시스템 설정이 완료되지 않았습니다. 이메일로 문의해주세요.");
-        setIsSubmitting(false);
-        return;
-      }
-      const { error: submitError } = await supabase
-        .from("certification_inquiries")
-        .insert({
-          program_id: formData.program_id || null,
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone || null,
-          organization: formData.organization || null,
-          inquiry_type: formData.inquiry_type,
-          message: formData.message || null,
-          source: "website",
-        });
+      const res = await fetch("/api/inquiry", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
 
-      if (submitError) throw submitError;
+      const result = await res.json();
+      if (!res.ok) throw new Error(result.error);
       setIsSubmitted(true);
     } catch (err) {
       setError(
