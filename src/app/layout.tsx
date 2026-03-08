@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     "지도전문가", "평생교육", "디지털교육", "교육자격증",
   ],
   verification: {
-    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || "",
+    google: "vCXPai8n7mZo-kVqsTqfUAqHg2zuGIvFnMZ9ORxKH0c",
     other: {
       "naver-site-verification": process.env.NEXT_PUBLIC_NAVER_SITE_VERIFICATION || "",
     },
