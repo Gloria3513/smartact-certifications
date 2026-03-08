@@ -1,5 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Mail, Phone, FileText, Users } from "lucide-react";
+import InquiryForm from "@/components/InquiryForm";
 
 const contactTypes = [
   {
@@ -28,23 +29,34 @@ export default function ContactPage() {
       {/* Hero */}
       <section className="bg-gradient-to-br from-teal-600 to-teal-700 text-white py-20 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            신청·문의
-          </h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">수강 신청</h1>
           <p className="text-xl text-teal-100">
-            궁금한 점이 있으시면 언제든 연락해 주세요
+            아래 양식을 작성해 주시면 빠르게 안내해 드립니다
           </p>
         </div>
       </section>
 
-      {/* Contact Cards */}
+      {/* Inquiry Form */}
       <section className="py-16 px-4">
+        <div className="max-w-2xl mx-auto">
+          <InquiryForm />
+        </div>
+      </section>
+
+      {/* Contact Cards */}
+      <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-5xl mx-auto">
+          <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-900 mb-12">
+            다른 방법으로 문의하기
+          </h2>
           <div className="grid md:grid-cols-3 gap-6">
             {contactTypes.map((type, idx) => {
               const Icon = type.icon;
               return (
-                <Card key={idx} className="hover:shadow-lg transition-shadow">
+                <Card
+                  key={idx}
+                  className="hover:shadow-lg transition-shadow"
+                >
                   <CardHeader>
                     <div className="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center mb-4">
                       <Icon className="w-6 h-6 text-teal-600" />
@@ -68,7 +80,7 @@ export default function ContactPage() {
       </section>
 
       {/* Direct Contact */}
-      <section className="py-16 px-4 bg-gray-50">
+      <section className="py-16 px-4">
         <div className="max-w-2xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-900 mb-12">
             직접 문의하기
@@ -103,20 +115,14 @@ export default function ContactPage() {
               </div>
             </CardContent>
           </Card>
-        </div>
-      </section>
 
-      {/* Office Hours */}
-      <section className="py-16 px-4">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-xl font-semibold text-gray-900 mb-4">
-            상담 가능 시간
-          </h2>
-          <p className="text-gray-600">
-            평일 09:00 - 18:00 (주말 및 공휴일 제외)
-            <br />
-            이메일은 24시간 접수 가능합니다.
-          </p>
+          <div className="text-center mt-8">
+            <p className="text-gray-600">
+              평일 09:00 - 18:00 (주말 및 공휴일 제외)
+              <br />
+              이메일은 24시간 접수 가능합니다.
+            </p>
+          </div>
         </div>
       </section>
     </div>
